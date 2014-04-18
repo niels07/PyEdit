@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """ 
-
  PyEdit ~ A simple texteditor written in Python
  
  Copyright (c) 2014 "PyEdit" Niels Vanden Eynde 
@@ -25,7 +24,6 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
-
 """
 
 import os
@@ -37,7 +35,6 @@ import gtksourceview2
 pygtk.require('2.0')
 
 class PyEditDocument:
-    
     def set_text(self, text):
         self.__buffer.set_text(text)
 
@@ -102,6 +99,8 @@ class PyEditDocument:
     
     # Signal for when text in the buffer has changed
     def __changed(self, data, iter, string, length):
+        # Prepend the filename in the label with a '*' so
+        # the user knows the file has been edited
         self.__label.set_text("*" + os.path.basename(self.__filename))
         self.__has_changed = True
 
@@ -156,10 +155,7 @@ class PyEdit:
         page = self.notebook.get_current_page()
         return self.documents[page]
 
-    ######################################
-    # Signal Functions
-    ######################################
-
+    # Create a new empty file
     def new_file(self, widget = None):
         tab = 1
         while tab in self.tabs:
@@ -212,6 +208,8 @@ class PyEdit:
         buffer.set_data('filename', filename)
 
         # Get text from file
+        # XXX: move this to PyEditDocument in as
+        # PyEditDocument.open(FILENAME) 
         f = open(filename, "r")
         text = f.read()
         f.close()
@@ -245,6 +243,10 @@ class PyEdit:
 
     def save_file(self, widget):
         document = self.get_current_document()
+
+        # If the document is a new file, request
+        # a filename, otherwise just overwrite the 
+        # one that's currently open.
         if document.is_newfile():
             self.save_file_as(None)
         else:
@@ -277,6 +279,8 @@ class PyEdit:
 
         self.xml.signal_autoconnect(signals)
         self.window.show()
+
+        # Create a new file when starting the program
         self.new_file()
         gtk.main()
 
