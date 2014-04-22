@@ -288,10 +288,160 @@
                 <property name="homogeneous">True</property>
               </packing>
             </child>
+            <child>
+              <widget class="GtkSeparatorToolItem" id="sep3">
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnCut">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Cut</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-cut</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnCopy">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Copy</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-copy</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnPaste">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Paste</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-paste</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="expand">False</property>
             <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkToolbar" id="tbEdit">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkToolButton" id="tbtnBold">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Bold</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-bold</property>
+                <signal name="clicked" handler="on_tbtnBold_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnItalic">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Italic</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-italic</property>
+                <signal name="clicked" handler="on_tbtnItalic_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnUnderline">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Underline</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-underline</property>
+                <signal name="clicked" handler="on_tbtnUnderline_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkSeparatorToolItem" id="sep4">
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnLeft">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Align Left</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-justify-left</property>
+                <signal name="clicked" handler="on_tbtnLeft_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnCenter">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Center</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-justify-center</property>
+                <signal name="clicked" handler="on_tbtnCenter_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tbtnRight">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Align Right</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-justify-right</property>
+                <signal name="clicked" handler="on_tbtnRight_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkSeparatorToolItem" id="sep5">
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
           </packing>
         </child>
         <child>
@@ -340,7 +490,7 @@
             </child>
           </widget>
           <packing>
-            <property name="position">2</property>
+            <property name="position">3</property>
           </packing>
         </child>
       </widget>
